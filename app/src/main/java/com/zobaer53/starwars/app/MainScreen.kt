@@ -29,13 +29,11 @@ fun MainScreen(
 ) {
     TabBar(navController)
 }
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun TabBar(
     navController: NavController
 ) {
-
     val pagerState = rememberPagerState { 3 }
     val coroutineScope = rememberCoroutineScope()
 

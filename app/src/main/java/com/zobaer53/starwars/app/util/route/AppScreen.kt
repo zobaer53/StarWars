@@ -6,8 +6,6 @@ sealed class AppScreen(val route: String) {
     object StarshipScreen : AppScreen(ConstantAppScreenName.STARSHIP_SCREEN)
     object DetailsScreen : AppScreen(ConstantAppScreenName.DETAILS_SCREEN)
 }
-
-
 object ConstantAppScreenName {
     const val MAIN_SCREEN = "main_screen"
     const val CHARACTER_SCREEN = "character_screen"
