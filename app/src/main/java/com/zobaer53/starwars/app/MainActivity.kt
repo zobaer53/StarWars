@@ -11,7 +11,6 @@ import com.zobaer53.starwars.app.util.route.NavGraph
 import com.zobaer53.starwars.app.util.theme.StarWarsTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,5 @@
 package com.zobaer53.starwars.app.util.route
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -12,7 +11,6 @@ import com.zobaer53.starwars.app.character.presentation.CharacterScreen
 import com.zobaer53.starwars.app.characterDetails.presentation.CharacterDetailScreen
 import com.zobaer53.starwars.app.starship.presentation.StarshipScreen
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NavGraph() {
     val navController = rememberNavController()
@@ -20,7 +18,6 @@ fun NavGraph() {
         navController = navController,
         startDestination = AppScreen.MainScreen.route,
     ) {
-
         composable(route = AppScreen.MainScreen.route) {
             MainScreen(
                 navController = navController
@@ -36,7 +33,6 @@ fun NavGraph() {
                 navController = navController
             )
         }
-
         // Detail screens for Character
         composable(
             route = AppScreen.DetailsScreen.route + "/{characterId}",
@@ -48,7 +44,5 @@ fun NavGraph() {
                 characterId = characterId.orEmpty()
             )
         }
-
-
     }
 }
