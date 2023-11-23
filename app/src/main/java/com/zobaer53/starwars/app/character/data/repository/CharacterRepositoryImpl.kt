@@ -5,6 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.zobaer53.starwars.app.character.data.datasource.remote.CharacterRemoteDataSource
+import com.zobaer53.starwars.app.character.data.repository.paging.CharacterRemoteMediator
 import com.zobaer53.starwars.app.character.domain.entity.Character
 import com.zobaer53.starwars.app.character.domain.repository.CharacterRepository
 import com.zobaer53.starwars.app.core.db.StarWarsDatabase
@@ -24,6 +25,10 @@ class CharacterRepositoryImpl @Inject constructor(
         @OptIn(ExperimentalPagingApi::class)
         return Pager(
             config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = false),
+            remoteMediator = CharacterRemoteMediator(
+                starWarsDatabase,
+                characterRemoteDataSource
+            ),
             pagingSourceFactory = pagingSourceFactory
         ).flow
     }
