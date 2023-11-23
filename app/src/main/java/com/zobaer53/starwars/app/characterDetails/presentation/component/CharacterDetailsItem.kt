@@ -3,6 +3,8 @@ package com.zobaer53.starwars.app.characterDetails.presentation.component
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,11 +20,11 @@ fun CharacterDetailsItem(
     characterId: String
 ) {
 
-    Surface(
+    Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 50.dp),
-       tonalElevation = 20.dp
+        elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Column(
             modifier = Modifier
