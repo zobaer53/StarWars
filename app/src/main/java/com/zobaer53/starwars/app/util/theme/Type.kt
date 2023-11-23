@@ -1,4 +1,4 @@
-package com.zobaer53.starwars.util.theme
+package com.zobaer53.starwars.app.util.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
