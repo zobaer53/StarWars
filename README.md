@@ -14,11 +14,11 @@
 
 # StarWars
 
-StarWars is an application for Android to watch ad-free Movies & TV Shows using Webview.
+StarWars is an application for Android to find all Planets, Spaceships, Vehicles, People, Films and Species
+From all SEVEN Star Wars films.
 
 # Preview
 
-https://github.com/zobaer53/zeDMoviesApp/assets/61627836/3743cf43-8afc-4984-b392-b425784ef823
 
 # Screens
 
