@@ -1,5 +1,6 @@
 package com.zobaer53.starwars.app.planet.presentation.componet
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.zobaer53.starwars.app.planet.domain.entity.Planet
 
 @Composable
-fun PlanetItem(planet: Planet){
+fun PlanetItem(planet: Planet, onClick: () -> Unit){
     Box(modifier = Modifier.padding(top = 8.dp)) {
         Card(
             colors = CardDefaults.cardColors(
@@ -28,18 +29,9 @@ fun PlanetItem(planet: Planet){
                 Text(
                     text = planet.name!!,
                     modifier = Modifier
-                        .padding(16.dp),
-                    textAlign = TextAlign.Center,
-                )
-                Text(
-                    text = planet.terrain!!,
-                    modifier = Modifier
-                        .padding(16.dp),
-                    textAlign = TextAlign.Center,
-                )
-                Text(
-                    text = planet.population!!,
-                    modifier = Modifier
+                        .clickable {
+                            onClick.invoke()
+                        }
                         .padding(16.dp),
                     textAlign = TextAlign.Center,
                 )

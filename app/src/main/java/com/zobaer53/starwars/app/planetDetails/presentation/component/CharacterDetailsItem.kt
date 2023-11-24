@@ -1,4 +1,4 @@
-package com.zobaer53.starwars.app.characterDetails.presentation.component
+package com.zobaer53.starwars.app.planetDetails.presentation.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,10 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.zobaer53.starwars.app.character.domain.entity.Character
+import com.zobaer53.starwars.app.planet.domain.entity.Planet
 
 @Composable
-fun CharacterDetailsItem(
-    character: Character?,
+fun PlanetDetailsItem(
+    planet: Planet?,
     characterId: String
 ) {
 
@@ -35,48 +36,27 @@ fun CharacterDetailsItem(
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodySmall
             )
-            character?.name?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Name",
-                    it
-                )
+/*            character?.name?.let {
+                CharacterDetailItem("Name", it)
             }
             character?.gender?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Gender",
-                    it
-                )
+                CharacterDetailItem("Gender", it)
             }
             character?.birthYear?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Birth Year",
-                    it
-                )
+                CharacterDetailItem("Birth Year", it)
             }
             character?.eyeColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Eye Color",
-                    it
-                )
+                CharacterDetailItem("Eye Color", it)
             }
             character?.hairColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Hair Color",
-                    it
-                )
+                CharacterDetailItem("Hair Color", it)
             }
             character?.height?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Height",
-                    it
-                )
+                CharacterDetailItem("Height", it)
             }
             character?.skinColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
-                    "Skin Color",
-                    it
-                )
-            }
+                CharacterDetailItem("Skin Color", it)
+            }*/
         }
     }
 }

@@ -16,11 +16,12 @@ import com.zobaer53.starwars.app.planet.presentation.componet.PlanetItem
 import com.zobaer53.starwars.app.util.ErrorMessage
 import com.zobaer53.starwars.app.util.LoadingNextPageItem
 import com.zobaer53.starwars.app.util.PageLoader
+import com.zobaer53.starwars.app.util.route.AppScreen
 
 @Composable
 fun PlanetsScreen(
     navController: NavController,
-    viewModel: PlanetViewModel = hiltViewModel()
+    viewModel: PlanetViewModel = hiltViewModel(navController.getBackStackEntry(AppScreen.MainScreen.route))
 ){
     val planetPagingItems : LazyPagingItems<Planet> = viewModel.planetsState.collectAsLazyPagingItems()
     LazyColumn(
@@ -29,7 +30,19 @@ fun PlanetsScreen(
         item { Spacer(modifier = Modifier.padding(4.dp)) }
 
         items(planetPagingItems.itemCount) { index ->
-            PlanetItem(planetPagingItems[index]!!)
+            val planet =planetPagingItems[index]!!
+
+            PlanetItem(
+                planet = planet,
+                onClick = {
+                    navController.navigate("${AppScreen.DetailsScreen.route}/${planet.id}",
+                        builder = {
+                            // Pop up to the CharacterScreen route, excluding it from the back stack
+                            popUpTo (AppScreen.CharacterScreen.route) {
+                                inclusive = false }
+                        })
+                }
+            )
         }
 
         planetPagingItems.apply {
