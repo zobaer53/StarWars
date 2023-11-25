@@ -29,6 +29,7 @@ fun MainScreen(
 ) {
     TabBar(navController)
 }
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun TabBar(
@@ -57,7 +58,8 @@ fun TabBar(
                 Tab(
                     selected = pagerState.currentPage == index,
                     onClick = {
-                        coroutineScope.launch { pagerState.animateScrollToPage(index) }
+                        coroutineScope.launch {
+                            pagerState.animateScrollToPage(index) }
                     },
                     text = { Text(text = title) }
                 )
@@ -73,8 +75,17 @@ fun TabBar(
                     navController.currentBackStackEntry
                     CharacterScreen(navController = navController)
                 }
-                1 -> StarshipScreen(navController = navController)
-                2 -> PlanetsScreen(navController = navController)
+
+                1 -> {
+                    navController.currentBackStackEntry
+                    StarshipScreen(navController = navController)
+                }
+
+                2 -> {
+                    navController.currentBackStackEntry
+                    PlanetsScreen(navController = navController)
+                }
+
                 else -> TabContent("Unknown Tab Content")
             }
         }

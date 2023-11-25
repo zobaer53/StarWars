@@ -12,58 +12,62 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.zobaer53.starwars.app.planet.domain.entity.Planet
+import androidx.compose.foundation.lazy.LazyColumn
 
 @Composable
 fun PlanetDetailsItem(
     planet: Planet?,
     characterId: String
 ) {
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 60.dp),
-        elevation = CardDefaults.cardElevation(8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .padding(16.dp)
-        ) {
-            Text(
-                text = characterId,
-                modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.bodySmall
-            )
-            planet?.climate?.let {
-                PlanetDetailItem("Climate", it)
-            }
-            planet?.created?.let {
-                PlanetDetailItem("Created", it)
-            }
-            planet?.diameter?.let {
-                PlanetDetailItem("Birth Year", it)
-            }
-            planet?.gravity?.let {
-                PlanetDetailItem("Gravity", it)
-            }
-            planet?.name?.let {
-                PlanetDetailItem("Name", it)
-            }
-            planet?.orbitalPeriod?.let {
-                PlanetDetailItem("OrbitalPeriod", it)
-            }
-            planet?.population?.let {
-                PlanetDetailItem("Population", it)
-            }
-            planet?.rotationPeriod?.let {
-                PlanetDetailItem("RotationPeriod", it)
-            }
-            planet?.surfaceWater?.let {
-                PlanetDetailItem("SurfaceWater", it)
-            }
-            planet?.terrain?.let {
-                PlanetDetailItem("Terrain", it)
+    LazyColumn {
+        item {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 60.dp),
+                elevation = CardDefaults.cardElevation(8.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp)
+                ) {
+                    Text(
+                        text = characterId,
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    planet?.climate?.let {
+                        PlanetDetailItem("Climate", it)
+                    }
+                    planet?.created?.let {
+                        PlanetDetailItem("Created", it)
+                    }
+                    planet?.diameter?.let {
+                        PlanetDetailItem("Birth Year", it)
+                    }
+                    planet?.gravity?.let {
+                        PlanetDetailItem("Gravity", it)
+                    }
+                    planet?.name?.let {
+                        PlanetDetailItem("Name", it)
+                    }
+                    planet?.orbitalPeriod?.let {
+                        PlanetDetailItem("OrbitalPeriod", it)
+                    }
+                    planet?.population?.let {
+                        PlanetDetailItem("Population", it)
+                    }
+                    planet?.rotationPeriod?.let {
+                        PlanetDetailItem("RotationPeriod", it)
+                    }
+                    planet?.surfaceWater?.let {
+                        PlanetDetailItem("SurfaceWater", it)
+                    }
+                    planet?.terrain?.let {
+                        PlanetDetailItem("Terrain", it)
+                    }
+                }
             }
         }
     }

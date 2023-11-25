@@ -21,7 +21,7 @@ import com.zobaer53.starwars.app.util.route.AppScreen
 @Composable
 fun StarshipScreen(
     navController: NavController,
-    viewModel: StarshipViewModel= hiltViewModel()
+    viewModel: StarshipViewModel= hiltViewModel(navController.getBackStackEntry(AppScreen.MainScreen.route))
 ){
     val starshipPagingItems : LazyPagingItems<Starship> = viewModel.starshipsState.collectAsLazyPagingItems()
     LazyColumn(
@@ -36,10 +36,10 @@ fun StarshipScreen(
             StarshipItem(
                starship = starship
             ) {
-                navController.navigate("${AppScreen.DetailsScreen.route}/${starship.id}",
+                navController.navigate("${AppScreen.StarshipDetailsScreen.route}/${starship.id}",
                     builder = {
                         // Pop up to the CharacterScreen route, excluding it from the back stack
-                        popUpTo(AppScreen.PlanetScreen.route) {
+                        popUpTo(AppScreen.MainScreen.route) {
                             inclusive = false
                         }
                     })

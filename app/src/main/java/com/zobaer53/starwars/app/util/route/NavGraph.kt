@@ -35,9 +35,9 @@ fun NavGraph() {
                 navController = navController
             )
         }
-        // Detail screens for Character
+        // Detail screen for Character
         composable(
-            route = AppScreen.DetailsScreen.route + "/{characterId}",
+            route = AppScreen.CharacterDetailsScreen.route + "/{characterId}",
             arguments = listOf(navArgument("characterId") { type = NavType.StringType })
         ) { backStackEntry ->
             val characterId = backStackEntry.arguments?.getString("characterId")
@@ -47,26 +47,26 @@ fun NavGraph() {
             )
         }
 
-        // Detail screens for Character
+        // Detail screen for Planet
         composable(
-            route = AppScreen.DetailsScreen.route + "/{characterId}",
-            arguments = listOf(navArgument("characterId") { type = NavType.StringType })
+            route = AppScreen.PlanetDetailsScreen.route + "/{planetId}",
+            arguments = listOf(navArgument("planetId") { type = NavType.StringType })
         ) { backStackEntry ->
-            val characterId = backStackEntry.arguments?.getString("characterId")
+            val planetId = backStackEntry.arguments?.getString("planetId")
             PlanetDetailScreen(
                 navController = navController,
-                planetId = characterId.orEmpty()
+                planetId = planetId.orEmpty()
             )
         }
-        // Detail screens for Character
+        // Detail screen for Starship
         composable(
-            route = AppScreen.DetailsScreen.route + "/{characterId}",
-            arguments = listOf(navArgument("characterId") { type = NavType.StringType })
+            route = AppScreen.StarshipDetailsScreen.route + "/{starshipId}",
+            arguments = listOf(navArgument("starshipId") { type = NavType.StringType })
         ) { backStackEntry ->
-            val characterId = backStackEntry.arguments?.getString("characterId")
-           StarshipDetailScreen(
+            val starshipId = backStackEntry.arguments?.getString("starshipId")
+            StarshipDetailScreen(
                 navController = navController,
-               starshipId = characterId.orEmpty()
+                starshipId = starshipId.orEmpty()
             )
         }
     }

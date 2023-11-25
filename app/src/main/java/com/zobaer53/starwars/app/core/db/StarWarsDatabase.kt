@@ -20,10 +20,10 @@ import com.zobaer53.starwars.app.starship.domain.entity.Starship
     entities = [
         Character::class,
         CharacterRemoteKeys::class,
-        Planet::class,
-        PlanetRemoteKeys::class,
         Starship::class,
-        StarshipRemoteKeys::class],
+        StarshipRemoteKeys::class,
+        Planet::class,
+        PlanetRemoteKeys::class],
     version = 1,
     exportSchema = false
 )

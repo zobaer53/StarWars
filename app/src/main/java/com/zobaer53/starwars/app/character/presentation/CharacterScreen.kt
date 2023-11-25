@@ -37,10 +37,10 @@ fun CharacterScreen(
             CharacterItem(
                 character = character,
                 onClick = {
-                    navController.navigate("${AppScreen.DetailsScreen.route}/${character.id}",
+                    navController.navigate("${AppScreen.CharacterDetailsScreen.route}/${character.id}",
                         builder = {
                             // Pop up to the CharacterScreen route, excluding it from the back stack
-                            popUpTo (AppScreen.CharacterScreen.route) {
+                            popUpTo (AppScreen.MainScreen.route) {
                                 inclusive = false }
                         })
                 }
