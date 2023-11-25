@@ -1,4 +1,4 @@
-package com.zobaer53.starwars.app.planetDetails
+package com.zobaer53.starwars.app.starshipDetails
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -20,40 +20,40 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.zobaer53.starwars.app.character.domain.entity.Character
-import com.zobaer53.starwars.app.character.presentation.CharacterViewModel
 import com.zobaer53.starwars.app.planet.domain.entity.Planet
 import com.zobaer53.starwars.app.planet.presentation.PlanetViewModel
 import com.zobaer53.starwars.app.planetDetails.presentation.component.PlanetDetailsItem
+import com.zobaer53.starwars.app.starship.domain.entity.Starship
+import com.zobaer53.starwars.app.starship.presentation.StarshipViewModel
+import com.zobaer53.starwars.app.starshipDetails.component.StarshipDetailsItem
 import com.zobaer53.starwars.app.util.route.AppScreen
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun PlanetDetailScreen(
+fun StarshipDetailScreen(
     navController: NavController,
-    planetId: String,
-    viewModel: PlanetViewModel = hiltViewModel(navController.getBackStackEntry(AppScreen.MainScreen.route))
+    starshipId: String,
+    viewModel: StarshipViewModel = hiltViewModel(navController.getBackStackEntry(AppScreen.MainScreen.route))
 ) {
     Scaffold(topBar = { TopAppBar(title = { Text(text = "Details Screen", color = Color.Black) },
         colors = TopAppBarDefaults.smallTopAppBarColors(containerColor =MaterialTheme.colorScheme.primary)) }) {
 
         Box(modifier = Modifier.padding( 16.dp)) {
-            val planetPagingItems: LazyPagingItems<Planet> =
-                viewModel.planetsState.collectAsLazyPagingItems()
+            val startshipPagingItems: LazyPagingItems<Starship> =
+                viewModel.starshipsState.collectAsLazyPagingItems()
 
             val characterPagingItemsRemembered by remember {
-                mutableStateOf(planetPagingItems)
+                mutableStateOf(startshipPagingItems)
             }
             val selectedCharacter = characterPagingItemsRemembered.itemSnapshotList
                 .find {
-                    it!!.id == planetId
+                    it!!.id == starshipId
                 }
-            selectedCharacter?.let { planet ->
-                PlanetDetailsItem(planet, planet.id)
+            selectedCharacter?.let { startship ->
+                StarshipDetailsItem(startship, startship.id)
             }
         }
     }
-
 }

@@ -1,14 +1,13 @@
-package com.starwars.app.starship.data.repository
+package com.zobaer53.starwars.app.starship.data.repository
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.starwars.app.core.db.StarWarsDatabase
+import com.zobaer53.starwars.app.core.db.StarWarsDatabase
 import com.zobaer53.starwars.app.starship.data.datasource.remote.StarshipRemoteDataSource
-import com.starwars.app.starship.domain.entity.Starship
-import com.starwars.app.starship.domain.repository.StarshipRepository
-import com.zobaer53.starwars.app.starship.data.repository.StarshipRemoteMediator
+import com.zobaer53.starwars.app.starship.domain.entity.Starship
+import com.zobaer53.starwars.app.starship.domain.repository.StarshipRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
