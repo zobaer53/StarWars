@@ -1,5 +1,5 @@
 ![StarWars](https://github.com/zobaer53/StarWars/blob/master/medias/starWarsCover.png)
-<p align="center">
+<p align="">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://android-arsenal.com/api?level=24"><img alt="API" src="https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat"/></a>
 </p>
@@ -14,10 +14,12 @@
 
 # StarWars
 
-StarWars is an application for Android to find all Planets, Spaceships, Vehicles, People, Films and Species
+StarWars is an  Android application  to find all Planets, Spaceships, People
 From all SEVEN Star Wars films.
 
 # Preview
+
+https://github.com/zobaer53/StarWars/assets/61627836/87f1a139-c7ed-48b0-88c2-11d21f5fb3d9
 
 
 # Screens
@@ -25,24 +27,31 @@ From all SEVEN Star Wars films.
 <table width="100%">
   <tbody>
     <tr>
-      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/dev/medias/starwarscharacter.png"/></td>
-      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/dev/medias/characterDetails.png"/></td>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/starwarscharacter.jpg"/></td>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/characterDetails.jpg"/></td>
+    </tr>
+    <tr>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/starships.jpg"/></td>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/starshipDetails.jpg"/></td>
+    </tr>
+      <tr>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/planets.jpg"/></td>
+      <td width="1%"><img src="https://github.com/zobaer53/StarWars/blob/master/medias/planetDetails.jpg"/></td>
     </tr>
   </tbody>
 </table>
 
 # Architecture
 
-The **NoFlix** app follows the
+The **Starwars** app follows the
 [official architecture guidance](https://developer.android.com/topic/architecture)
 
 ![Architecture diagram](https://github.com/zobaer53/zeDMoviesApp/blob/master/architecture-1-overall.png)
 
 # API Keys
-Star Wars uses [SWAPI](https://swapi.dev/) API in order to fetch all Planets, Spaceships, Vehicles, People, Films and Species
+Star Wars uses [SWAPI](https://swapi.dev/) API in order to fetch all Planets, Spaceships, People
 From all SEVEN Star Wars films.
 <br>
-
 
 
 
