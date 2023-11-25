@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.zobaer53.starwars.app.character.domain.entity.Character
 import com.zobaer53.starwars.app.planet.domain.entity.Planet
 
 @Composable
@@ -36,33 +35,42 @@ fun PlanetDetailsItem(
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodySmall
             )
-/*            character?.name?.let {
-                CharacterDetailItem("Name", it)
+            planet?.climate?.let {
+                PlanetDetailItem("Climate", it)
             }
-            character?.gender?.let {
-                CharacterDetailItem("Gender", it)
+            planet?.created?.let {
+                PlanetDetailItem("Created", it)
             }
-            character?.birthYear?.let {
-                CharacterDetailItem("Birth Year", it)
+            planet?.diameter?.let {
+                PlanetDetailItem("Birth Year", it)
             }
-            character?.eyeColor?.let {
-                CharacterDetailItem("Eye Color", it)
+            planet?.gravity?.let {
+                PlanetDetailItem("Gravity", it)
             }
-            character?.hairColor?.let {
-                CharacterDetailItem("Hair Color", it)
+            planet?.name?.let {
+                PlanetDetailItem("Name", it)
             }
-            character?.height?.let {
-                CharacterDetailItem("Height", it)
+            planet?.orbitalPeriod?.let {
+                PlanetDetailItem("OrbitalPeriod", it)
             }
-            character?.skinColor?.let {
-                CharacterDetailItem("Skin Color", it)
-            }*/
+            planet?.population?.let {
+                PlanetDetailItem("Population", it)
+            }
+            planet?.rotationPeriod?.let {
+                PlanetDetailItem("RotationPeriod", it)
+            }
+            planet?.surfaceWater?.let {
+                PlanetDetailItem("SurfaceWater", it)
+            }
+            planet?.terrain?.let {
+                PlanetDetailItem("Terrain", it)
+            }
         }
     }
 }
 
 @Composable
-fun CharacterDetailItem(label: String, value: String) {
+fun PlanetDetailItem(label: String, value: String) {
     Column(
         modifier = Modifier
             .fillMaxWidth()

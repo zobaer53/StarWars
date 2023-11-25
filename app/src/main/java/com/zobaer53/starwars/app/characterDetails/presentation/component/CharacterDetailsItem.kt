@@ -36,43 +36,43 @@ fun CharacterDetailsItem(
                 style = MaterialTheme.typography.bodySmall
             )
             character?.name?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+               CharacterDetailItem(
                     "Name",
                     it
                 )
             }
             character?.gender?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+                CharacterDetailItem(
                     "Gender",
                     it
                 )
             }
             character?.birthYear?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+              CharacterDetailItem(
                     "Birth Year",
                     it
                 )
             }
             character?.eyeColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+            CharacterDetailItem(
                     "Eye Color",
                     it
                 )
             }
             character?.hairColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+               CharacterDetailItem(
                     "Hair Color",
                     it
                 )
             }
             character?.height?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+                CharacterDetailItem(
                     "Height",
                     it
                 )
             }
             character?.skinColor?.let {
-                com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailItem(
+               CharacterDetailItem(
                     "Skin Color",
                     it
                 )

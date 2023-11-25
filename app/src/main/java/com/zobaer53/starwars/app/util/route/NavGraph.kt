@@ -8,7 +8,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.zobaer53.starwars.app.MainScreen
 import com.zobaer53.starwars.app.character.presentation.CharacterScreen
-import com.zobaer53.starwars.app.characterDetails.presentation.CharacterDetailScreen
+import com.zobaer53.starwars.app.characterDetails.CharacterDetailScreen
+import com.zobaer53.starwars.app.planetDetails.PlanetDetailScreen
 import com.zobaer53.starwars.app.starship.presentation.StarshipScreen
 
 @Composable
@@ -40,6 +41,18 @@ fun NavGraph() {
         ) { backStackEntry ->
             val characterId = backStackEntry.arguments?.getString("characterId")
             CharacterDetailScreen(
+                navController = navController,
+                characterId = characterId.orEmpty()
+            )
+        }
+
+        // Detail screens for Character
+        composable(
+            route = AppScreen.DetailsScreen.route + "/{characterId}",
+            arguments = listOf(navArgument("characterId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val characterId = backStackEntry.arguments?.getString("characterId")
+            PlanetDetailScreen(
                 navController = navController,
                 characterId = characterId.orEmpty()
             )

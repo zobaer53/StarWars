@@ -1,4 +1,4 @@
-package com.zobaer53.starwars.app.characterDetails.presentation
+package com.zobaer53.starwars.app.characterDetails
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -22,7 +22,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.zobaer53.starwars.app.character.domain.entity.Character
 import com.zobaer53.starwars.app.character.presentation.CharacterViewModel
-import com.zobaer53.starwars.app.planetDetails.presentation.component.CharacterDetailsItem
+import com.zobaer53.starwars.app.characterDetails.presentation.component.CharacterDetailsItem
 import com.zobaer53.starwars.app.util.route.AppScreen
 
 

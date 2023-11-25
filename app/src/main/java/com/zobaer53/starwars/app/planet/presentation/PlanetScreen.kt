@@ -38,7 +38,7 @@ fun PlanetsScreen(
                     navController.navigate("${AppScreen.DetailsScreen.route}/${planet.id}",
                         builder = {
                             // Pop up to the CharacterScreen route, excluding it from the back stack
-                            popUpTo (AppScreen.CharacterScreen.route) {
+                            popUpTo (AppScreen.PlanetScreen.route) {
                                 inclusive = false }
                         })
                 }
