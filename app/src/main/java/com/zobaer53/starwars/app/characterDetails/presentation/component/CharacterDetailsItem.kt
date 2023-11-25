@@ -36,25 +36,46 @@ fun CharacterDetailsItem(
                 style = MaterialTheme.typography.bodySmall
             )
             character?.name?.let {
-                CharacterDetailItem("Name", it)
+               CharacterDetailItem(
+                    "Name",
+                    it
+                )
             }
             character?.gender?.let {
-                CharacterDetailItem("Gender", it)
+                CharacterDetailItem(
+                    "Gender",
+                    it
+                )
             }
             character?.birthYear?.let {
-                CharacterDetailItem("Birth Year", it)
+              CharacterDetailItem(
+                    "Birth Year",
+                    it
+                )
             }
             character?.eyeColor?.let {
-                CharacterDetailItem("Eye Color", it)
+            CharacterDetailItem(
+                    "Eye Color",
+                    it
+                )
             }
             character?.hairColor?.let {
-                CharacterDetailItem("Hair Color", it)
+               CharacterDetailItem(
+                    "Hair Color",
+                    it
+                )
             }
             character?.height?.let {
-                CharacterDetailItem("Height", it)
+                CharacterDetailItem(
+                    "Height",
+                    it
+                )
             }
             character?.skinColor?.let {
-                CharacterDetailItem("Skin Color", it)
+               CharacterDetailItem(
+                    "Skin Color",
+                    it
+                )
             }
         }
     }
