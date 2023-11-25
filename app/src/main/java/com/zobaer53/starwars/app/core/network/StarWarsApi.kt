@@ -1,5 +1,6 @@
 package com.zobaer53.starwars.app.core.network
 
+import com.zobaer53.starwars.app.starship.data.model.dto.StarshipDto
 import com.zobaer53.starwars.app.character.data.model.dto.CharacterDto
 import com.zobaer53.starwars.app.planet.data.model.dto.PlanetDto
 import retrofit2.http.GET
@@ -11,4 +12,6 @@ interface StarWarsApi {
     suspend fun getCharacter(@Query("page") page: Int): CharacterDto
     @GET("planets/")
     suspend fun getPlanet(@Query("page") page: Int): PlanetDto
+    @GET("starships/")
+    suspend fun getStarship(@Query("page") page: Int): StarshipDto
 }
