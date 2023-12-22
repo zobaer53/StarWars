@@ -1,13 +1,16 @@
 package com.zobaer53.starwars.app.character.presentation
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -80,4 +83,43 @@ fun CharacterScreen(
         }
         item { Spacer(modifier = Modifier.padding(4.dp)) }
     }
+}
+
+
+
+@Composable
+@Preview
+fun CharacterScreenPreview() {
+    // Mock a NavController
+    val navController: NavController = rememberNavController()
+
+    // Mock a ViewModel using hiltViewModel
+    val viewModel = hiltViewModel<CharacterViewModel>()
+
+    // Mock some characters for preview
+    val characters: List<Character> = listOf(
+     Character(name = "Luke Skywalker", birthYear = "1243", eyeColor = "red", gender = "male", hairColor = "brown", height = "78", skinColor = "white"),
+     Character(name = "Luke Skywalker", birthYear = "1243", eyeColor = "red", gender = "male", hairColor = "brown", height = "78", skinColor = "white"),
+     Character(name = "Luke Skywalker", birthYear = "1243", eyeColor = "red", gender = "male", hairColor = "brown", height = "78", skinColor = "white"),
+     Character(name = "Luke Skywalker", birthYear = "1243", eyeColor = "red", gender = "male", hairColor = "brown", height = "78", skinColor = "white"),
+
+        // Add more characters as needed
+    )
+
+    // Preview the CharacterScreen
+    CharacterScreen(navController = navController, viewModel = viewModel)
+
+
+}
+// You can also preview the CharacterScreen with different themes
+@Composable
+@Preview
+fun CharacterScreenDarkPreview() {
+    // Mock a NavController
+    val navController: NavController = rememberNavController()
+
+    // Mock a ViewModel using hiltViewModel
+    val viewModel = hiltViewModel<CharacterViewModel>()
+
+    CharacterScreen(navController = navController, viewModel = viewModel)
 }

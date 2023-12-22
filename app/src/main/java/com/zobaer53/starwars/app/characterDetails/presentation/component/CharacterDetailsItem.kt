@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.zobaer53.starwars.app.character.domain.entity.Character
+import androidx.compose.ui.tooling.preview.Preview
+
 
 @Composable
 fun CharacterDetailsItem(
@@ -98,3 +100,40 @@ fun CharacterDetailItem(label: String, value: String) {
         )
     }
 }
+
+@Composable
+@Preview
+fun CharacterDetailsItemPreview() {
+    // Mock character data for preview
+    val character = Character(
+        id = "1",
+        name = "Luke Skywalker",
+        gender = "Male",
+        birthYear = "19 BBY",
+        eyeColor = "Blue",
+        hairColor = "Blond",
+        height = "172 cm",
+        skinColor = "Fair"
+        // Add more properties as needed
+    )
+
+    // Mock characterId for preview
+    val characterId = "Character ID: 1"
+
+    // Preview the CharacterDetailsItem
+    CharacterDetailsItem(character = character, characterId = characterId)
+}
+
+@Composable
+@Preview
+fun CharacterDetailItemPreview() {
+    // Mock label and value for preview
+    val label = "Name"
+    val value = "Luke Skywalker"
+
+    // Preview the CharacterDetailItem
+    CharacterDetailItem(label = label, value = value)
+}
+
+
+

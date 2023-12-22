@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.zobaer53.starwars.app.character.domain.entity.Character
 
@@ -40,4 +41,11 @@ fun CharacterItem(character: Character, onClick: () -> Unit){
             }
         }
     }
+}
+
+@Composable
+@Preview
+fun CharacterItemPreview() {
+    val character = Character(name = "Luke Skywalker", birthYear = "1243", eyeColor = "red", gender = "male", hairColor = "brown", height = "78", skinColor = "white")
+    CharacterItem(character = character, onClick = {})
 }
